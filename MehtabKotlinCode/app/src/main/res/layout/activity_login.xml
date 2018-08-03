@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical">
+
+
+    <com.mehtabkotlin.custom.BCustomTextView
+        android:id="@+id/loginText"
+        style="@style/item_name_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:gravity="center_horizontal"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/loginCardView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_250sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/loginText"
+        card_view:cardBackgroundColor="@color/black_light">
+
+        <LinearLayout
+            android:id="@+id/loginLinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_email"
+                style="@style/TextLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/emailPhoneEdit"
+                    style="@style/item_name_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email_hint" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_password"
+                style="@style/TextLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp">
+
+                <EditText
+                    android:id="@+id/passwordEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password_hint"
+                    android:inputType="textPassword" />
+            </android.support.design.widget.TextInputLayout>
+
+            <com.mehtabkotlin.custom.BCustomTextView
+                android:id="@+id/forgetPasswordText"
+                style="@style/item_name_style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="end"
+                android:text="@string/forget_password"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+
+            <com.mehtabkotlin.custom.BCustomButton
+                android:id="@+id/loginButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/small_button_background_red"
+                android:text="@string/login"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <com.mehtabkotlin.custom.BCustomTextView
+        android:id="@+id/registerText"
+        style="@style/item_name_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="@string/register_msg"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/loginCardView" />
+
+</android.support.constraint.ConstraintLayout>

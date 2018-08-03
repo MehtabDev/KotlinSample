@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#33bcf0</color>
+    <color name="colorPrimaryDark">#33bcf0</color>
+    <color name="colorAccent">#33bcf0</color>
+
+    <color name="toolbar_left_color">#33bcf0</color>
+    <color name="toolbar_center_color">#3395e0</color>
+    <color name="toolbar_right_color">#3367cc</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="black_light">#60000000</color>
+    <color name="blue_light">#f7031943</color>
+    <color name="green">#f60f763f</color>
+
+    <color name="selected">#f9b237</color>
+    <color name="unselected_end_color">#fda711</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="recycler_background">#f0f0f0</color>
+    <color name="seperator_background">#ecf0f5</color>
+    <color name="grey">#eae9e9</color>
+
+    <color name="background_lady_upper">#b3d5de</color>
+    <color name="background_lady_bottom">#64adb5</color>
+
+    <color name="test1">#3cbdb5</color>
+    <color name="test2">#37b5c6</color>
+    <color name="test3">#35afce</color>
+
+    <color name="red_button_background">#ff6479</color>
+    <color name="green_button_background">#2ed67c</color>
+
+
+    <color name="toolbar_left_color_room">#f7a84f</color>
+    <color name="toolbar_center_color_room">#f88670</color>
+    <color name="toolbar_right_color_room">#d15c76</color>
+
+</resources>

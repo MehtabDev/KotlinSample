@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey">
+
+    <include
+        android:id="@+id/commonHeader"
+        layout="@layout/common_header" />
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/c"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/viewPagerRelative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/commonHeader">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/itemDetailsRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_400sdp" />
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/availableColorCardView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/viewPagerRelative"
+                card_view:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <com.mehtabkotlin.custom.BCustomTextView
+                        android:id="@+id/availableColorText"
+                        style="@style/item_name_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:text="Available Colors" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/differentColorRecycler"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/availableColorText"
+                        android:layout_marginBottom="@dimen/_3sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        app:layout_scrollFlags="scroll|snap" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/itemDescriptionCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@id/availableColorCardView"
+                card_view:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.mehtabkotlin.custom.BCustomTextView
+                        android:id="@+id/itemNameText"
+                        style="@style/item_name_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="Lion caron LCS-8069 BLUE DIAL DAY and DATE FUNCTIONING Watch - For Men" />
+
+                    <com.mehtabkotlin.custom.BCustomTextView
+                        android:id="@+id/specialPriceText"
+                        style="@style/regular_text_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:maxLines="2"
+                        android:text="Special price ends in 10 minutes 30 seconds"
+                        android:textColor="@color/green" />
+
+                    <LinearLayout
+                        android:id="@+id/priceLinear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/priceSymbolText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="₹"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_18sdp"
+                            android:textStyle="bold" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/discountedPriceText"
+                            style="@style/regular_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="550"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_17sdp"
+                            android:textStyle="bold" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/actualPriceText"
+                            style="@style/regular_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_1sdp"
+                            android:text="1550"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/discountPerText"
+                            style="@style/regular_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_2sdp"
+                            android:text="50% off"
+                            android:textColor="@color/green"
+                            android:textSize="@dimen/_10sdp" />
+                    </LinearLayout>
+
+                    <com.mehtabkotlin.custom.BCustomTextView
+                        android:id="@+id/freeDeliStatusText"
+                        style="@style/regular_text_style"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:textColor="@color/black"
+                        android:text="Free Delivery on F- Assured purchases over 500" />
+
+                    <LinearLayout
+                        android:id="@+id/ratingLinear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginRight="@dimen/_2sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <Button
+                            style="@style/Small_Button_red"
+                            android:gravity="center"
+                            android:text="4.2 ⋆"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_15sdp"
+                            android:textStyle="bold" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/ratingReviewText"
+                            style="@style/regular_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:layout_marginRight="@dimen/_1sdp"
+                            android:text="1550 ratings and 322 reviews"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/customButtonCardView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                card_view:cardBackgroundColor="@color/grey">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <LinearLayout
+                        android:id="@+id/shareLinear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="32"
+                        android:background="@drawable/ripple_effect"
+                        android:clickable="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/shareSymbolImage"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:src="@drawable/icon_speaker" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/shareText"
+                            style="@style/regular_text_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:text="Share"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/_1sdp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/grey" />
+
+                    <LinearLayout
+                        android:id="@+id/similarLinear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="34"
+                        android:background="@drawable/ripple_effect"
+                        android:clickable="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/similarSymbolImage"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:src="@drawable/icon_speaker" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/similarText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            style="@style/regular_text_style"
+                            android:gravity="center_vertical"
+                            android:text="Similar Product"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/_1sdp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/grey" />
+
+                    <LinearLayout
+                        android:id="@+id/wishListLinear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="32"
+                        android:background="@drawable/ripple_effect"
+                        android:clickable="true"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/wishListSymbolImage"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:src="@drawable/icon_speaker" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/wishListText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:gravity="center"
+                            style="@style/regular_text_style"
+                            android:text="Wishlist"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/specialDiscountOfferCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                card_view:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/creditCardRelative"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/creditCardImage"
+                            style="@style/item_name_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:text="\u25CF" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/creditCardText"
+                            style="@style/item_name_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_toRightOf="@+id/creditCardImage"
+                            android:text="EMI options available for All Credit Cards" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/creditCardTermCondText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="@string/term_cond"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/grey" />
+
+                    <RelativeLayout
+                        android:id="@+id/specialDiscountRelative"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/specialDiscountImage"
+                            style="@style/item_name_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:text="\u25CF" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/specialDiscountText"
+                            style="@style/item_name_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_toLeftOf="@+id/specialDiscountTermCondText"
+                            android:layout_toRightOf="@+id/specialDiscountImage"
+                            android:text="Special Price : Get extra 10% off (Price inclusive of discount)" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/specialDiscountTermCondText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="@string/term_cond"
+                            android:textSize="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/grey" />
+
+                    <RelativeLayout
+                        android:id="@+id/buyMoreDiscountRelative"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/buyMoreDiscountImage"
+                            style="@style/item_name_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:text="\u25CF" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/buyMoreDiscountText"
+                            style="@style/item_name_style"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_toLeftOf="@+id/buyMoreDiscountTermCondText"
+                            android:layout_toRightOf="@+id/buyMoreDiscountImage"
+                            android:text="Buy More, Save More : Buy worth 2000-3900 save 200; Buy worth 4000 save 600" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/buyMoreDiscountTermCondText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="@string/term_cond"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp"
+                            android:textAllCaps="false"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/colorSizeCardView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                card_view:cardBackgroundColor="@color/grey">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="100">
+
+                    <LinearLayout
+                        android:id="@+id/colorLinear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="50"
+                        android:background="@drawable/ripple_effect"
+                        android:clickable="true"
+                        android:orientation="vertical">
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/colorSymbolText"
+                            style="@style/item_name_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:textColor="@color/green"
+                            android:text="White Blue" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/colorText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:text="Colors"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/_1sdp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/grey" />
+
+                    <LinearLayout
+                        android:id="@+id/sizeLinear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_1sdp"
+                        android:layout_weight="49"
+                        android:background="@drawable/ripple_effect"
+                        android:clickable="true"
+                        android:orientation="vertical">
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/sizeSymbolText"
+                            style="@style/item_name_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:text="7,8,9" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/sizeText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:text="Sizes"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                card_view:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:id="@+id/addressDetailsLinear"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:id="@+id/noAddressViewRelative"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/noAddressText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="bottom|center"
+                            android:text="No Address Associated"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <com.mehtabkotlin.custom.BCustomButton
+                            android:id="@+id/addAddressButton"
+                            style="@style/Small_Button_red"
+                            android:layout_width="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="Add Address"
+                            android:textAllCaps="false"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/addressViewRelative"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp">
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/addressText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:ellipsize="end"
+                            android:gravity="bottom|center"
+                            android:singleLine="true"
+                            android:text="Ship To: Mehtab-11025"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/showButton"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:ellipsize="end"
+                            android:gravity="bottom|center"
+                            android:singleLine="true"
+                            android:text="O-69, 3rd floor, Nafees Road"
+                            android:textColor="@color/black_light"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <com.mehtabkotlin.custom.BCustomButton
+                            android:id="@+id/showButton"
+                            style="@style/Small_Button_grey"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:layout_toRightOf="@+id/addressText"
+                            android:gravity="center"
+                            android:text="Office" />
+
+                        <com.mehtabkotlin.custom.BCustomButton
+                            android:id="@+id/changeAddressButton"
+                            style="@style/Small_Button_red"
+                            android:layout_width="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="Change"
+                            android:textAllCaps="false"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:layout_below="@+id/addAddressButton"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@color/grey" />
+
+                    <RelativeLayout
+                        android:id="@+id/soldByViewRelative"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp">
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:id="@+id/soldByText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:ellipsize="end"
+                            android:gravity="bottom|center"
+                            android:singleLine="true"
+                            android:text="Sold By : "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
+
+                        <com.mehtabkotlin.custom.BCustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/soldByText"
+                            android:ellipsize="end"
+                            android:gravity="bottom|center"
+                            android:singleLine="true"
+                            android:text="Certified Seller(4.9)"
+                            android:textColor="@color/green"
+                            style="@style/item_name_style"/>
+                    </RelativeLayout>
+
+                    <com.mehtabkotlin.custom.BCustomTextView
+                        android:id="@+id/deliveryMessageText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:ellipsize="end"
+                        android:gravity="bottom|center"
+                        android:maxLines="2"
+                        android:text="Delivery by Tomorrow, sunday available if ordered now "
+                        android:textColor="@color/black"
+                        style="@style/regular_text_style"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold" />
+
+                    <com.mehtabkotlin.custom.BCustomTextView
+                        android:id="@+id/freeMessageText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:ellipsize="end"
+                        android:gravity="bottom|center"
+                        android:maxLines="2"
+                        android:text="Free Delivery in 2 days, Monday if ordered now "
+                        style="@style/regular_text_style"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold" />
+
+                    <com.mehtabkotlin.custom.BCustomTextView
+                        android:id="@+id/cashDeliveryMessageText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="bottom|center"
+                        android:text="\u2022  Cash on Delivery"
+                        android:textSize="@dimen/_12sdp"
+                        style="@style/regular_text_style"
+                        android:textStyle="bold" />
+
+                    <com.mehtabkotlin.custom.BCustomTextView
+                        android:id="@+id/emiMessageText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="bottom|center"
+                        android:text="\u2022  Easy EMI Options Available"
+                        style="@style/regular_text_style"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/sizeOnlyLinear"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:elevation="@dimen/_1sdp"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:id="@+id/sizeViewLinear"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:background="@drawable/ripple_effect"
+                    android:orientation="vertical">
+
+                    <com.mehtabkotlin.custom.BCustomTextView
+                        android:id="@+id/sizeViewSymbolText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:text="7,8,9" />
+
+                    <com.mehtabkotlin.custom.BCustomTextView
+                        android:id="@+id/sizeViewText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:text="Sizes"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/productDetailLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:elevation="@dimen/_1sdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/detailHeaderLinear"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/_1sdp"
+                    android:background="@drawable/ripple_effect"
+                    android:orientation="vertical">
+
+                    <com.mehtabkotlin.custom.BCustomTextView
+                        android:id="@+id/detailText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="Details"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_15sdp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="@color/grey" />
+
+                    <com.mehtabkotlin.custom.BCustomTextView
+                        android:id="@+id/highlightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="HighLights"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold" />
+
+                    <com.mehtabkotlin.custom.BCustomTextView
+                        android:id="@+id/highlightDesText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:text="\u2022 this is natural material metaphor is the unifying theory of a rationalized space and a system of motion."
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold" />
+
+                    <com.mehtabkotlin.custom.BCustomTextView
+                        android:id="@+id/allDetailText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="See More"
+                        android:textColor="@color/green_button_background"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/large_text" />
+
+            <Button
+                android:id="@+id/got_it"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="29dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/agree_msg"
+                android:textAppearance="@style/Small_Button_red" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/large_text" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:behavior_hideable="true"
+        app:layout_behavior="com.mehtabkotlin.custom.BOutOfScreenBottomSheetBehavior">
+
+        <Button
+            android:id="@+id/bottom_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/agree_msg"
+            android:textAppearance="@style/Small_Button_red" />
+
+    </FrameLayout>
+
+
+    <!-- This view serves as the dependency of the of BOutOfScreenBottomSheetBehaviorvior
+     (it has to be a direct child of the CoordinatorLayout) -->
+    <View
+        android:id="@+id/behavior_dependency"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_anchor="@id/got_it"
+        app:layout_anchorGravity="bottom" />
+
+
+</android.support.design.widget.CoordinatorLayout>

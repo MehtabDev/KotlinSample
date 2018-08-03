@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mehtabkotlin.BDashboardShopActivity">
+    <item
+        android:id="@+id/action_notification"
+        android:icon="@mipmap/shopping_cart_blue"
+        android:orderInCategory="100"
+        android:title="Notification"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_shop_cart"
+        android:icon="@mipmap/shopping_cart_blue"
+        android:title="Shopping Cart"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+</menu>
