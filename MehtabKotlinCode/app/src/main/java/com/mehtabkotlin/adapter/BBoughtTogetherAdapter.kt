@@ -10,27 +10,22 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.mehtabkotlin.R
+import com.mehtabkotlin.view.activity.BItemDetailActivity
 import com.mehtabkotlin.view.activity.BRelatedItemShowActivity
 
 /**
  * Created by rajeshk on 03-08-2018.
  */
-class BRelatedItemShowAdapter(relatedItemShowActivity: BRelatedItemShowActivity, context: Context, gridList: String) : RecyclerView.Adapter<BRelatedItemShowAdapter.ItemsViewHolder>() {
+class BBoughtTogetherAdapter(itemDetailsActivity: BItemDetailActivity, context: Context) : RecyclerView.Adapter<BBoughtTogetherAdapter.ItemsViewHolder>() {
     private var context = context
-    private var gridList = gridList
-    private var mBRelatedItemShowActivity: BRelatedItemShowActivity = relatedItemShowActivity
+    private var mBBoughtTogetherAdapter: BItemDetailActivity = itemDetailsActivity
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemsViewHolder {
-        var view: View? = null
-        if (gridList.equals("list")) {
-            view = LayoutInflater.from(context).inflate(R.layout.related_item_list, parent, false)
-        } else {
-            view = LayoutInflater.from(context).inflate(R.layout.related_item_grid, parent, false)
-        }
+        var view: View? = LayoutInflater.from(context).inflate(R.layout.adapter_bought_together, parent, false)
         return ItemsViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return 100
+        return 10
     }
 
     override fun onBindViewHolder(holder: ItemsViewHolder, position: Int) {
@@ -65,7 +60,7 @@ class BRelatedItemShowAdapter(relatedItemShowActivity: BRelatedItemShowActivity,
         }
 
         override fun onClick(view: View?) {
-            mBRelatedItemShowActivity.showDetailSelected()
+//            mBRelatedItemShowActivity.showDetailSelected()
 
 
         }

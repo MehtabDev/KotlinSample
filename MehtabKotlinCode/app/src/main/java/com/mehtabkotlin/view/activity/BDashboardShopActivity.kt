@@ -55,7 +55,6 @@ class BDashboardShopActivity : BParentActivity(), BDrawerAdapter.OnItemSelectedL
             R.id.action_notification ->
                 return true
             R.id.action_shop_cart ->
-
                 return true
             else -> super.onOptionsItemSelected(item)
         }
@@ -85,6 +84,7 @@ class BDashboardShopActivity : BParentActivity(), BDrawerAdapter.OnItemSelectedL
             MEN_CAT -> {
                 val loginIntent = Intent(this@BDashboardShopActivity, BLoginActivity::class.java)
                 startActivity(loginIntent)
+                moveHead(this@BDashboardShopActivity)
 
 /*
                 showFragment(SHomeFragment(), false)
@@ -93,7 +93,9 @@ class BDashboardShopActivity : BParentActivity(), BDrawerAdapter.OnItemSelectedL
                 clearBackStack()*/
 
             }
+            WOMEN_CAT -> {
 
+            }
         }
     }
 

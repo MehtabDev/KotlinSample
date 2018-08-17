@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/commonHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <RelativeLayout
+                android:id="@+id/userCurrentLocationRelative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userCurrentLocationImage"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/icon_speaker" />
+
+                <com.mehtabkotlin.custom.BCustomTextView
+                    android:id="@+id/userCurrentLocationText"
+                    style="@style/textStyleBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Use the Current Location as Address"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/addressTypeRelative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp">
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/white"
+                        android:checked="true"
+                        android:paddingLeft="10dp"
+                        android:text="HOME"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/radio2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/white"
+                        android:paddingLeft="10dp"
+                        android:text="OFFICE"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </RadioGroup>
+            </RelativeLayout>
+
+
+            <com.mehtabkotlin.custom.BCustomEditText
+                android:id="@+id/userAddressNameEdit"
+                style="@style/textStyleBold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:paddingStart="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/grey_hint"
+                android:textStyle="bold" />
+
+
+            <com.mehtabkotlin.custom.BCustomEditText
+                android:id="@+id/userAddress1Edit"
+                style="@style/textStyleBold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Address 1"
+                android:imeOptions="actionNext"
+                android:paddingStart="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/grey_hint"
+                android:textStyle="bold" />
+
+            <com.mehtabkotlin.custom.BCustomEditText
+                android:id="@+id/userAddress2Edit"
+                style="@style/textStyleBold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Address 2 (Optional)"
+                android:imeOptions="actionNext"
+                android:maxLines="2"
+                android:paddingStart="@dimen/_15sdp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/grey_hint"
+                android:textStyle="bold" />
+
+            <com.mehtabkotlin.custom.BCustomEditText
+                android:id="@+id/userAddressLandmarkEdit"
+                style="@style/textStyleBold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Landmark (Optional)"
+                android:imeOptions="actionNext"
+                android:maxLines="2"
+                android:paddingStart="@dimen/_15sdp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/grey_hint"
+                android:textStyle="bold" />
+
+            <com.mehtabkotlin.custom.BCustomEditText
+                android:id="@+id/userAddressCityEdit"
+                style="@style/textStyleBold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_background"
+                android:hint="City"
+                android:imeOptions="actionNext"
+                android:paddingStart="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/grey_hint"
+                android:textStyle="bold" />
+
+            <com.mehtabkotlin.custom.BCustomEditText
+                android:id="@+id/userAddressStateEdit"
+                style="@style/textStyleBold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_background"
+                android:hint="State"
+                android:imeOptions="actionNext"
+                android:paddingStart="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/grey_hint"
+                android:textStyle="bold" />
+
+            <com.mehtabkotlin.custom.BCustomEditText
+                android:id="@+id/userAddressCountryEdit"
+                style="@style/textStyleBold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Country"
+                android:imeOptions="actionNext"
+                android:paddingStart="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/grey_hint"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_background">
+
+                <com.mehtabkotlin.custom.BCustomTextView
+                    android:id="@+id/availableTimeText"
+                    style="@style/textStyleBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/dropDownImage"
+                    android:layout_toStartOf="@+id/dropDownImage"
+                    android:background="@null"
+                    android:hint="Select Your Availability"
+                    android:paddingLeft="@dimen/_15sdp"
+                    android:paddingRight="@dimen/_15sdp"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textColorHint="@color/grey_hint"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/dropDownImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginRight="@dimen/_15sdp"
+                    android:src="@mipmap/down_arrow" />
+            </RelativeLayout>
+
+            <com.mehtabkotlin.custom.BCustomButton
+                android:id="@+id/addAddressButton"
+                style="@style/Small_Button_green"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="Add Address"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.constraint.ConstraintLayout>

@@ -36,6 +36,8 @@
         </activity>
         <activity android:name=".view.activity.BDashboardShopActivity" />
         <activity android:name=".view.activity.BLoginActivity" />
+        <activity android:name=".view.activity.BRegisterActivity" />
+        <activity android:name=".view.activity.BAddAddressActivity" />
         <activity android:name=".view.activity.BItemDetailActivity" />
         <activity android:name=".view.activity.BChooserActivity" />
         <activity android:name=".view.activity.BDeliveryActivity" />

@@ -21,6 +21,8 @@
     <color name="seperator_background">#ecf0f5</color>
     <color name="grey">#eae9e9</color>
 
+    <color name="grey_hint">#c7c5c5</color>
+
     <color name="background_lady_upper">#b3d5de</color>
     <color name="background_lady_bottom">#64adb5</color>
 
@@ -30,10 +32,12 @@
 
     <color name="red_button_background">#ff6479</color>
     <color name="green_button_background">#2ed67c</color>
+    <color name="green_color">#2ed67c</color>
 
 
     <color name="toolbar_left_color_room">#f7a84f</color>
     <color name="toolbar_center_color_room">#f88670</color>
     <color name="toolbar_right_color_room">#d15c76</color>
+
 
 </resources>

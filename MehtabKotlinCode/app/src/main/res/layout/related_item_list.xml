@@ -5,67 +5,145 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardBackgroundColor="@color/white"
+    app:cardElevation="1dp"
+    app:cardMaxElevation="1dp"
     app:cardUseCompatPadding="true"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent">
 
     <LinearLayout
+        android:id="@+id/selectRelatedItemLinear"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="5dp"
+        android:layout_margin="1dp"
+        android:background="@drawable/ripple_effect"
         android:orientation="horizontal"
         android:weightSum="5">
 
         <ImageView
-            android:id="@+id/img"
+            android:id="@+id/itemImage"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="@dimen/_100sdp"
             android:layout_gravity="center"
             android:layout_weight="1.5"
-            android:scaleType="fitXY"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/watch" />
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="5dp"
             android:layout_weight="3.5"
             android:orientation="vertical">
 
             <com.mehtabkotlin.custom.BCustomTextView
-                android:id="@+id/tvProductName"
+                android:id="@+id/itemNameText"
                 style="@style/item_name_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lee Skinny Men's......"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Lion caron LCS-8069 BLUE DIAL DAY and DATE FUNCTIONING Watch - For Men"
+                android:textSize="@dimen/_10sdp" />
+
+
+            <LinearLayout
+                android:id="@+id/priceLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:orientation="horizontal">
+
+                <com.mehtabkotlin.custom.BCustomTextView
+                    android:id="@+id/priceSymbolText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="₹"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold" />
+
+                <com.mehtabkotlin.custom.BCustomTextView
+                    android:id="@+id/discountedPriceText"
+                    style="@style/regular_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="550"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <com.mehtabkotlin.custom.BCustomTextView
+                    android:id="@+id/actualPriceText"
+                    style="@style/regular_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_1sdp"
+                    android:text="1550"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+
+                <com.mehtabkotlin.custom.BCustomTextView
+                    android:id="@+id/discountPerText"
+                    style="@style/regular_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_2sdp"
+                    android:text="50% off"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/_10sdp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ratingLinear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:orientation="horizontal">
+
+                <com.mehtabkotlin.custom.BCustomButton
+                    android:id="@+id/ratingStarButton"
+                    style="@style/Small_Button_green"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:text="4.2 ⋆"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <com.mehtabkotlin.custom.BCustomTextView
+                    android:id="@+id/ratingReviewText"
+                    style="@style/regular_text_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_1sdp"
+                    android:text="(1200)"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp" />
+            </LinearLayout>
 
             <com.mehtabkotlin.custom.BCustomTextView
+                android:id="@+id/specialPriceText"
+                style="@style/regular_text_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rating : 4.2"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="Special price"
+                android:textColor="@color/green" />
 
-            <TextView
-                android:id="@+id/tvProductCost"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="$1,199"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No Cost EMI, Buy More, Save More.."
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 

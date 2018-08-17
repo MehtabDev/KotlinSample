@@ -51,6 +51,7 @@ class BHomeFragment() : BParentFragment() {
 
             val mainIntent: Intent = Intent(activity, BRelatedItemShowActivity::class.java)
             startActivity(mainIntent)
+//            activity.moveHead(activity)
 
         })
 
@@ -64,10 +65,10 @@ class BHomeFragment() : BParentFragment() {
         itemRecycler.requestDisallowInterceptTouchEvent(true)
 
         todayDealWebView.getSettings().setJavaScriptEnabled(true);
-        todayDealWebView.loadUrl("https://www.flipkart.com")
+//        todayDealWebView.loadUrl("https://www.flipkart.com")
 
         trendingWebView.getSettings().setJavaScriptEnabled(true);
-        trendingWebView.loadUrl("https://www.myntra.com")
+//        trendingWebView.loadUrl("https://www.myntra.com")
 
 
         mCategoryShopAdapter = BHomeCategoryShopAdapter()

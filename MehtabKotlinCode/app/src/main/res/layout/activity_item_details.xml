@@ -10,7 +10,7 @@
         android:id="@+id/commonHeader"
         layout="@layout/common_header" />
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -174,8 +174,8 @@
                         android:layout_marginLeft="@dimen/_10sdp"
                         android:layout_marginRight="@dimen/_2sdp"
                         android:layout_marginTop="@dimen/_5sdp"
-                        android:textColor="@color/black"
-                        android:text="Free Delivery on F- Assured purchases over 500" />
+                        android:text="Free Delivery on F- Assured purchases over 500"
+                        android:textColor="@color/black" />
 
                     <LinearLayout
                         android:id="@+id/ratingLinear"
@@ -279,10 +279,10 @@
 
                         <com.mehtabkotlin.custom.BCustomTextView
                             android:id="@+id/similarText"
+                            style="@style/regular_text_style"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="@dimen/_5sdp"
-                            style="@style/regular_text_style"
                             android:gravity="center_vertical"
                             android:text="Similar Product"
                             android:textColor="@color/black"
@@ -317,11 +317,11 @@
 
                         <com.mehtabkotlin.custom.BCustomTextView
                             android:id="@+id/wishListText"
+                            style="@style/regular_text_style"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="@dimen/_5sdp"
                             android:gravity="center"
-                            style="@style/regular_text_style"
                             android:text="Wishlist"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_12sdp"
@@ -424,8 +424,8 @@
                             android:layout_centerVertical="true"
                             android:gravity="center"
                             android:text="@string/term_cond"
-                            android:textSize="@dimen/_10sdp"
                             android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp"
                             android:textStyle="bold" />
 
                     </RelativeLayout>
@@ -470,9 +470,9 @@
                             android:layout_centerVertical="true"
                             android:gravity="center"
                             android:text="@string/term_cond"
+                            android:textAllCaps="false"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_10sdp"
-                            android:textAllCaps="false"
                             android:textStyle="bold" />
 
                     </RelativeLayout>
@@ -509,8 +509,8 @@
                             android:layout_gravity="center"
                             android:layout_marginLeft="@dimen/_5sdp"
                             android:gravity="center"
-                            android:textColor="@color/green"
-                            android:text="White Blue" />
+                            android:text="White Blue"
+                            android:textColor="@color/green" />
 
                         <com.mehtabkotlin.custom.BCustomTextView
                             android:id="@+id/colorText"
@@ -703,6 +703,7 @@
                             android:textStyle="bold" />
 
                         <com.mehtabkotlin.custom.BCustomTextView
+                            style="@style/item_name_style"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_toRightOf="@+id/soldByText"
@@ -710,12 +711,12 @@
                             android:gravity="bottom|center"
                             android:singleLine="true"
                             android:text="Certified Seller(4.9)"
-                            android:textColor="@color/green"
-                            style="@style/item_name_style"/>
+                            android:textColor="@color/green" />
                     </RelativeLayout>
 
                     <com.mehtabkotlin.custom.BCustomTextView
                         android:id="@+id/deliveryMessageText"
+                        style="@style/regular_text_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -726,12 +727,12 @@
                         android:maxLines="2"
                         android:text="Delivery by Tomorrow, sunday available if ordered now "
                         android:textColor="@color/black"
-                        style="@style/regular_text_style"
                         android:textSize="@dimen/_12sdp"
                         android:textStyle="bold" />
 
                     <com.mehtabkotlin.custom.BCustomTextView
                         android:id="@+id/freeMessageText"
+                        style="@style/regular_text_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -742,13 +743,13 @@
                         android:gravity="bottom|center"
                         android:maxLines="2"
                         android:text="Free Delivery in 2 days, Monday if ordered now "
-                        style="@style/regular_text_style"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_12sdp"
                         android:textStyle="bold" />
 
                     <com.mehtabkotlin.custom.BCustomTextView
                         android:id="@+id/cashDeliveryMessageText"
+                        style="@style/regular_text_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -757,11 +758,11 @@
                         android:gravity="bottom|center"
                         android:text="\u2022  Cash on Delivery"
                         android:textSize="@dimen/_12sdp"
-                        style="@style/regular_text_style"
                         android:textStyle="bold" />
 
                     <com.mehtabkotlin.custom.BCustomTextView
                         android:id="@+id/emiMessageText"
+                        style="@style/regular_text_style"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
@@ -770,7 +771,6 @@
                         android:layout_marginTop="@dimen/_5sdp"
                         android:gravity="bottom|center"
                         android:text="\u2022  Easy EMI Options Available"
-                        style="@style/regular_text_style"
                         android:textSize="@dimen/_12sdp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -890,23 +890,67 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/large_text" />
 
-            <Button
-                android:id="@+id/got_it"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="29dp"
                 android:background="@color/colorPrimary"
-                android:text="@string/agree_msg"
-                android:textAppearance="@style/Small_Button_red" />
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-            <TextView
+                <com.mehtabkotlin.custom.BCustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="ADD TO CART"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+
+                <com.mehtabkotlin.custom.BCustomButton
+                    android:id="@+id/got_it"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/red_button_background"
+                    android:text="BUY NOW"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/large_text" />
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <com.mehtabkotlin.custom.BCustomTextView
+                    style="@style/item_name_style"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="Bought Together"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/blue_light"
+                    android:textSize="@dimen/_15sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:background="@color/grey" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/boughtTogetherItemRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/seperator_background"/>
+            </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
     <FrameLayout
         android:id="@+id/bottom_sheet"
@@ -915,13 +959,34 @@
         app:behavior_hideable="true"
         app:layout_behavior="com.mehtabkotlin.custom.BOutOfScreenBottomSheetBehavior">
 
-        <Button
-            android:id="@+id/bottom_button"
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/colorPrimary"
-            android:text="@string/agree_msg"
-            android:textAppearance="@style/Small_Button_red" />
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.mehtabkotlin.custom.BCustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Add to wishlist"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <com.mehtabkotlin.custom.BCustomButton
+                android:id="@+id/bottom_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/red_button_background"
+                android:text="BUY NOW"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </LinearLayout>
 
     </FrameLayout>
 

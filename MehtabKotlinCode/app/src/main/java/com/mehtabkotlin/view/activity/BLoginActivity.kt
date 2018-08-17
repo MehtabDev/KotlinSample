@@ -1,12 +1,14 @@
 package com.mehtabkotlin.view.activity
 
+import android.annotation.TargetApi
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
 import com.mehtabkotlin.R
-import com.mehtabkotlin.logger.BLogger
 import com.mehtabkotlin.util.BUtil
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.common_header.*
 
 /**
  * Created by mehtabk on 7/14/2018.
@@ -44,7 +46,6 @@ class BLoginActivity : BParentActivity() {
                     registerButtonClicked()
                 }
             }
-
         }
     }
 
@@ -73,7 +74,9 @@ class BLoginActivity : BParentActivity() {
      * Description: forget Password button clicked, open another view to enter email or phone for validation.
      */
     fun forgetPasswordClicked() {
-
+        val loginIntent = Intent(this@BLoginActivity, BAddAddressActivity::class.java)
+        startActivity(loginIntent)
+        moveHead(this@BLoginActivity)
     }
 
     /**
@@ -81,6 +84,8 @@ class BLoginActivity : BParentActivity() {
      * Description: register Password button clicked, open another view to register new user.
      */
     fun registerButtonClicked() {
-
+        val loginIntent = Intent(this@BLoginActivity, BRegisterActivity::class.java)
+        startActivity(loginIntent)
+        moveHead(this@BLoginActivity)
     }
 }

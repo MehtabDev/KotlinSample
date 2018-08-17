@@ -15,8 +15,10 @@ import com.mehtabkotlin.application.BApplication
 import kotlinx.android.synthetic.main.activity_item_details.*
 import kotlinx.android.synthetic.main.common_header.*
 import android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
-
-
+import android.support.v7.widget.GridLayoutManager
+import com.example.rajeshk.recylerviewexample.adapter.BBoughtTogetherAdapter
+import com.example.rajeshk.recylerviewexample.adapter.BRelatedItemShowAdapter
+import kotlinx.android.synthetic.main.fragment_releated_item.*
 
 
 /**
@@ -33,6 +35,11 @@ class BItemDetailActivity : BParentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_details)
         setSupportActionBar(commonToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+        commonToolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
         setTitle("Item Details")
         button = findViewById(R.id.got_it)
         bottomButton = findViewById(R.id.bottom_button)
@@ -64,6 +71,12 @@ class BItemDetailActivity : BParentActivity() {
         differentColorRecycler.requestDisallowInterceptTouchEvent(true)
 
         actualPriceText.setPaintFlags(actualPriceText.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
+
+
+        boughtTogetherItemRecycler.layoutManager = GridLayoutManager(this, 2)
+        boughtTogetherItemRecycler.isNestedScrollingEnabled = false
+        var adapter = BBoughtTogetherAdapter(this@BItemDetailActivity, BApplication.instance)
+        boughtTogetherItemRecycler.adapter = adapter
     }
 
     private fun exit(view: View) {

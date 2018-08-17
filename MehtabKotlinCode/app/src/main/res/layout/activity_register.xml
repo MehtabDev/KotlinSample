@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical">
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/commonHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <RelativeLayout
+                android:id="@+id/avatar_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userProfileImage"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/icon_speaker" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/userSelectorImage"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_alignBottom="@+id/userProfileImage"
+                    android:layout_alignLeft="@+id/userProfileImage"
+                    android:layout_alignStart="@+id/userProfileImage"
+                    android:layout_marginLeft="@dimen/_65sdp"
+                    android:layout_marginStart="@dimen/_65sdp"
+                    android:src="@drawable/icon_speaker" />
+            </RelativeLayout>
+
+
+            <com.mehtabkotlin.custom.BCustomEditText
+                android:id="@+id/userNameEdit"
+                style="@style/textStyleBold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:paddingStart="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/grey_hint"
+                android:textStyle="bold" />
+
+
+            <com.mehtabkotlin.custom.BCustomEditText
+                android:id="@+id/userEmailEdit"
+                style="@style/textStyleBold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Email (Optional)"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:paddingStart="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/grey_hint"
+                android:textStyle="bold" />
+
+            <com.mehtabkotlin.custom.BCustomEditText
+                android:id="@+id/userPhoneEdit"
+                style="@style/textStyleBold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_background"
+                android:digits="0123456789"
+                android:hint="Phone"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:paddingStart="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/grey_hint"
+                android:textStyle="bold" />
+
+            <com.mehtabkotlin.custom.BCustomEditText
+                android:id="@+id/userPasswordEdit"
+                style="@style/textStyleBold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Password"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:paddingStart="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/grey_hint"
+                android:textStyle="bold" />
+
+            <com.mehtabkotlin.custom.BCustomEditText
+                android:id="@+id/userConfirmPasswordEdit"
+                style="@style/textStyleBold"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Confirm Password"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:paddingStart="@dimen/_15sdp"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/grey_hint"
+                android:textStyle="bold" />
+
+
+            <com.mehtabkotlin.custom.BCustomButton
+                android:id="@+id/btn_doctor_signup"
+                style="@style/Small_Button_green"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:text="Register"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.constraint.ConstraintLayout>

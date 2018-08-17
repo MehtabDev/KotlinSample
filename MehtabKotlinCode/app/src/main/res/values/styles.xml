@@ -90,6 +90,15 @@
         <item name="android:background">@drawable/small_button_background_red</item>
     </style>
 
+    <style name="Small_Button_green">
+        <item name="android:layout_width">@dimen/_50sdp</item>
+        <item name="android:layout_height">@dimen/_25sdp</item>
+        <item name="android:textSize">@dimen/_8sdp</item>
+        <item name="android:textColor">@color/green_color</item>
+        <item name="font_name">bold</item>
+        <item name="android:background">@drawable/small_button_background_green</item>
+    </style>
+
     <style name="item_name_style">
         <item name="android:textSize">@dimen/_12sdp</item>
         <item name="android:textColor">@color/blue_light</item>
@@ -110,12 +119,12 @@
 
     <style name="TextLabel" parent="TextAppearance.AppCompat">
         <!-- Hint color and label color in FALSE state -->
-        <item name="android:textColorHint">@color/colorPrimary</item>
+        <item name="android:textColorHint">@color/red_button_background</item>
         <item name="android:textSize">30sp</item>
         <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
-        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorAccent">@color/red_button_background</item>
         <item name="font_name">bold</item>
-        <item name="colorControlNormal">@color/colorPrimary</item>
-        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/red_button_background</item>
+        <item name="colorControlActivated">@color/red_button_background</item>
     </style>
 </resources>
